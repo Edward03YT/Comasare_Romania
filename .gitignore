@@ -1,0 +1,122 @@
+# ==============================================================================
+# .gitignore — Harta Comasărilor Administrative România
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Dependențe Node.js / JavaScript
+# ------------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# 2. Build & Cache Next.js / TypeScript
+# ------------------------------------------------------------------------------
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts.bak
+
+# ------------------------------------------------------------------------------
+# 3. Variabile de mediu & Secrete (Supabase keys, tokeni API)
+# NICIODATĂ nu comiteți chei de acces secrete în repository public!
+# ------------------------------------------------------------------------------
+.env
+.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# ------------------------------------------------------------------------------
+# 4. Date brute voluminoase & Fișiere GIS (data_raw/)
+# Depășesc limita de 100MB impusă de GitHub:
+#   - gis_osm_roads_free_1.shp (~275 MB)
+#   - gis_osm_roads_free_1.dbf (~194 MB)
+#   - maxp_result.geojson (~15.6 MB)
+# Aceste fișiere se generează/descarcă automat cu:
+#   python scripts/01_descarca_date.py
+#   python scripts/05_descarca_drumuri.py
+# Păstrăm directorul data_raw prin intermediul fișierului .gitkeep
+# ------------------------------------------------------------------------------
+data_raw/*
+!data_raw/.gitkeep
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+
+# ------------------------------------------------------------------------------
+# 5. Mediu Python & Cache (scripturi descărcare / procesare / seed)
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ------------------------------------------------------------------------------
+# 6. Fișiere specifice sistemului de operare & Cache
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux / Editor swap
+*~
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# 7. Setări IDE & Editoare de cod
+# ------------------------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ------------------------------------------------------------------------------
+# 8. Directoare temporare, arhive externe și duplicate
+# ------------------------------------------------------------------------------
+anti-ai-slop-writing-main/
+*.log
+*.tmp
+*.temp

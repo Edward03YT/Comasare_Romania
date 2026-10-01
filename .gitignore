@@ -114,9 +114,15 @@ $RECYCLE.BIN/
 *.sublime-project
 
 # ------------------------------------------------------------------------------
-# 8. Directoare temporare, arhive externe și duplicate
+# 8. Directoare temporare, arhive externe și duplicate Windows
 # ------------------------------------------------------------------------------
 anti-ai-slop-writing-main/
 *.log
 *.tmp
 *.temp
+scratch/
+* (1).*
+* (2).*
+* (3).*
+* - Copy.*
+* - Copie.*
